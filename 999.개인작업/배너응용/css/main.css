@@ -238,9 +238,6 @@
     border-right: 1px solid #e6e6e6;
 }
 
-.news1>a {
-}
-
 .news1>a>dl dt:nth-child(1) {
     font-family: 'Noto Sans KR', sans-serif;
     color: #000;
@@ -266,9 +263,6 @@
     height: 152px;
     line-height: 30px;
     border-right: 1px solid #e6e6e6;
-}
-
-.news2>ul>a {
 }
 
 .news2>ul>a>li.n2_li {
@@ -372,9 +366,6 @@
 .login2 {
     border-left: 1px solid #e6e6e6;
     height: 418px;
-}
-
-.login2>a, .log2>a {
 }
 
 .log2>p {
