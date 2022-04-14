@@ -215,7 +215,8 @@
 .mid_wrap {
     float: left;
 }
-.news{
+
+.news {
     max-width: 300px;
 }
 
@@ -305,11 +306,12 @@
 .shop1>ul>li.item_two {
     margin: 0 10px;
 }
-.shop1>ul>li>a>div img{
+
+.shop1>ul>li>a>div img {
     transition: all 0.2s linear;
 }
 
-.shop1>ul>li>a>div img:hover{
+.shop1>ul>li>a>div img:hover {
     transform: scale(1.2);
 }
 
@@ -375,7 +377,8 @@
     font-family: 'Noto Sans KR', sans-serif;
     text-align: center;
 }
-.log2>button.btn1{
+
+.log2>button.btn1 {
     display: block;
     margin: 10px 15px;
     background-color: rgb(38, 120, 255);
@@ -386,7 +389,8 @@
     color: #fff;
     font-size: 1.5rem;
 }
-.log2>button.btn2{
+
+.log2>button.btn2 {
     display: block;
     margin: 10px 15px;
     background-color: #727272;
@@ -398,21 +402,25 @@
     font-size: 1.5rem;
 }
 
-.log2>button.btn1:hover, .log2>button.btn2:hover{
+.log2>button.btn1:hover,
+.log2>button.btn2:hover {
     filter: brightness(110%);
 }
 
-.log2>a>p{
+.log2>a>p {
     display: inline;
     font-size: 1.2rem;
     color: #999;
 }
-.log2>a>p.fp{
+
+.log2>a>p.fp {
     margin: 15px 7px 15px 23px;
 }
-.log2>a>p.sp{
+
+.log2>a>p.sp {
     margin: 15px 15px 15px 7px;
 }
+
 /* ********************************************** 로그인칸 끝 */
 .mid_sns {
     position: absolute;
@@ -420,14 +428,16 @@
     left: 47%;
     margin-left: 630px;
 }
+
 .mid_sns>ul>li>a.instar {
     display: block;
     width: 46px;
     height: 46px;
     background-image: url(../FF14/icon_sns.png);
     background-repeat: no-repeat;
-    margin: 0 1px 10px;   
+    margin: 0 1px 10px;
 }
+
 .mid_sns>ul>li>a.faceb {
     display: block;
     width: 46px;
@@ -437,6 +447,7 @@
     margin: 10px 1px;
     background-position: 0 -46px;
 }
+
 .mid_sns>ul>li>a.youtb {
     display: block;
     width: 46px;
@@ -446,6 +457,7 @@
     margin: 10px 1px;
     background-position: 0 -92px;
 }
+
 .mid_sns>ul>li>a.twitter {
     display: block;
     width: 46px;
@@ -455,6 +467,7 @@
     margin: 10px 1px;
     background-position: 0 -138px;
 }
+
 .mid_sns>ul>li>a.naverp {
     display: block;
     width: 46px;
@@ -464,24 +477,35 @@
     margin: 10px 1px;
     background-position: 0 -184px;
 }
+
 .mid_sns>ul>li>a.instar:hover {
     background-position: -46px 0;
 }
+
 .mid_sns>ul>li>a.faceb:hover {
     background-position: -46px -46px;
 }
+
 .mid_sns>ul>li>a.youtb:hover {
     background-position: -46px -92px;
 }
+
 .mid_sns>ul>li>a.twitter:hover {
     background-position: -46px -138px;
 }
+
 .mid_sns>ul>li>a.naverp:hover {
     background-position: -46px -184px;
 }
-.instar, .faceb, .youtb, .twitter, .naverp {
+
+.instar,
+.faceb,
+.youtb,
+.twitter,
+.naverp {
     display: none;
 }
+
 /* *********************************** 중간영역 sns 끝 */
 
 
