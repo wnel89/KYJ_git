@@ -1,0 +1,71 @@
+@charset "utf-8";
+/* 외부 css 파일은 반드시 최상단에 문자셋 인코딩 세팅을 해야함 */
+
+.bxc {
+    width: 727px;
+    padding: 10px;
+    margin: 20px auto;
+    box-sizing: border-box;
+    text-align: center;
+}
+header {
+    text-align: center;
+    height: 130px;
+    border: 1px solid #b6b6b6;
+    padding: 10px;
+    background-color: #ffe4db;
+    /* 보더, 패딩 사이즈 내부에 포함시키기 */
+    box-sizing: border-box;
+    /* 원래는 보더와 패딩만큼 커지는게 기본 속성이지만 이것을 내부에 포함시키는 속성이다. 기본값은 content-box */
+}
+/* 
+[CSS 선택자]
+1. 타입선택자 : 요소명 (ex: h1/p/a/div)
+2. 자손선택자 : 띄어쓰기 (ex: h1 a)
+3. 아이디선택자: # (ex: #top)
+4. 클래스선택자: . (ex: .cat)
+5. 직계자식선택자: > (ex: div>a)
+6. 그룹선택자: , (ex: p,div)
+7. 종속선택자: 태그명+아이디/클래스 (ex: header#top)
+8. 속성선택자: [] (ex: a[href=#])
+9. 형제선택자: + (ex: li+li)
+10. 다중형제선택자: ~ (ex: li:nth-child(4)~li)
+*/
+#top h1 {
+    color: #ff1f8f;
+    text-shadow: 2px 2px 2px #505050;
+}
+.cat a {
+    color: #16b900;
+    font-weight: bold;
+    text-decoration: none;
+}
+/* 메뉴 a에 마우스 오버 시 */
+/* 선택자:hover > 마우스 오버 시 가상 클래스 */
+.cat a:hover {
+    text-decoration: overline;
+}
+/* nav 태그인데 클래스가 cat인 요소 아래자손 중 img 요소 선택 */
+nav.cat img {
+    vertical-align: middle;
+    /* 인라인 요소가 세로정렬 : top, middle, bottom, baseline 가능 */
+    border: none;
+    /* 이미지에 링크가 걸린경우 파란색 테두리가 서버에 올린 후 보일 수 있어서 없애는 것 */
+}
+.box1{
+    background-color:#ffb0b050
+}
+.box2{
+    text-decoration: underline;
+}
+footer#info address {
+    background-color: rgb(218, 218, 218);
+    padding: 20px;
+    box-sizing: border-box;
+    font-style: normal;
+    font-size: 12px;
+    line-height: 1.5;
+}
+footer#info span {
+    font-style: italic;
+}

@@ -1,0 +1,107 @@
+@charset "utf-8";
+
+/************** 1050px 이하 시작 **************/
+@media screen and (max-width:1050px){
+    .glist {
+        top: 55px;
+        left: 10px;
+        padding-top: 6px;
+        flex-direction: column;
+        /* 수직방향 */
+        align-items: flex-end;
+        /* 진행방향 수직으로 아래쪽(오른쪽) */ 
+    }
+    .glist>li:hover .smenu {
+        display: none;
+    }
+}
+
+/************** 780px 이하 시작 **************/
+@media screen and (max-width:780px) {
+
+    /* 하단영역 */
+    #info {
+        height: auto;
+    }
+
+    /* 회사정보 */
+    #info address {
+        text-align: center;
+        padding: 0;
+        /* 기존 패딩 위,왼쪽 없앰 */
+    }
+
+    /* 회사정보 */
+    #info address span {
+        display: block;
+        padding: 3vw;
+    }
+
+    /* 하단로고 이미지 */
+    #info img {
+        float: none;
+        margin-right: 0;
+        margin-top: 20px;
+    }
+
+    /* sns박스 */
+    ul.sns {
+        position: static;
+        justify-content: center;
+        padding: 20px 0;
+    }
+}
+/************** 600px 이하 시작 **************/
+@media screen and (max-width:600px) {
+
+    /* 메인영역 비율변경 */
+    #cont.rbx::before {
+        padding-top: 150%;
+    }
+
+    /* 메인 배경 속성변경 */
+    #cont {
+        background-position: top;
+        /* 배경위치 top만 쓰면 가로는 자동 center */
+        background-size: 350%;
+        /* 배경크기에 수치를 하나만쓰면 
+        가로크기임(세로자동) */
+    }
+
+    /* 스크린 위치,크기조정 */
+    #screen {
+        top: 16.8%;
+        left: 12.8%;
+        width: 76%;
+        height: 28.8%;
+    }
+
+    /* 예고편 선택메뉴 */
+    .mlist {
+        width: 90vw;
+        /* 가로크기지정 */
+        bottom: 15%;
+    }
+
+    /* ul 플렉스박스 */
+    .mlist ul {
+        flex-wrap: wrap;
+        /* 줄바꿈 */
+    }
+
+    /* 포스터 이미지크기 */
+    .mlist img {
+        width: 43vw;
+        /* 한줄에 3개 오도록 크기조정 */
+    }
+    /* 이미지설명박스 */
+    .movtxt {
+        width: 43vw;
+        /* 한줄에 3개 오도록 크기조정 */
+        font-size: 3vw;
+    }
+    .movtxt li:first-child{
+        font-size: 3.2vw;
+    }
+
+}

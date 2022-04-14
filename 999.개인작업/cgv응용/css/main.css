@@ -1,0 +1,272 @@
+@charset "utf-8";
+/* CGV 응용 메인 페이지 CSS - main.css */
+
+/* 외부CSS합치기 */
+@import url(reset.css);
+@import url(core.css);
+
+body{
+background-color: #F2EBD8;
+}
+
+/* 공사중표시 */
+/* body *{
+    outline: 2px dotted lime;
+} */
+
+
+/* 레이아웃 공통 클래스 Rbox */
+.Rbox {
+    max-width: 1200px;
+    /* 최대 1200px, 이하일땐 auto */
+    margin: 0 auto;
+    /* 마영오! - 가로중앙 */
+}
+
+/******************* 1. 상단영역 *******************/
+
+.top{
+    position: relative;
+    z-index: 999;
+    height: 80px;
+}
+.logo{
+    text-align: center;
+    line-height: 80px; 
+}
+.logo img{
+    position: absolute;
+    transform: translate(-50%,15px);
+}
+.gnb{
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.glist{
+    position: relative;
+    z-index: 1;
+    display: flex;
+    /* 플렉스박스 */
+}
+.glist>li{
+    position: relative;
+    padding: 0 10px;
+    padding-bottom: 5px;
+}
+.glist>li>a{
+    text-shadow: 0 0 4px rgb(161, 151, 115);
+    animation: titAni .5s ease-in infinite alternate;
+}
+@keyframes titAni {
+    to{
+        text-shadow: 0 0 12px rgb(117, 110, 84);
+    }
+}
+.smenu{
+    position: absolute;
+    transform: translate(-15%,5px);
+    width: 180px;
+    background: #fff;
+    padding: 3px;
+    border-radius: 5px;
+    text-align: center;
+    display: none;/* 처음에 안보임! */
+}
+.glist>li:hover .smenu{
+    display: block;
+}
+/* 서브메뉴 ol */
+.smenu ol{
+    border: 1px solid #ccc;
+    padding: 8px;
+}
+/* 서브메뉴 li */
+.smenu li{
+    font-size: 16px;
+    line-height: 2;
+}
+.smenu a{
+    display: block;
+    /* li부모요소 가로 끝까지 차지함! */
+}
+/* 서브메뉴 a에 마우스 오버시 글자색 빨강 */
+.smenu a:hover{
+    color: rgb(38, 139, 255);
+}
+
+.glist>li:nth-child(2) .smenu li a:hover::after{
+    content: '🌎';
+    float: right;
+    /* 인라인요소 오른쪽 끝으로 보냄! */
+}
+.glist>li:nth-child(3) .smenu li a:hover::after{
+    content: '📃';
+    float: right;
+    /* 인라인요소 오른쪽 끝으로 보냄! */
+}
+
+/******************* 2. 메인영역 *******************/
+
+#cont{
+    position: relative;
+    /* 부모자격 */
+    height: 788px;
+    background: url(../FF14_2/tab6_s_img4.png) no-repeat center/cover;
+}
+#cont::before{
+    padding-top: 65.66%;
+}
+#screen{
+    position: absolute;
+    top: 17.2%;
+    left: 21.3%;
+    /* 부모는? #cont */
+    width: 58.6%;
+    height: 50.7%;
+    background-color: #fff;
+}
+#screen iframe{
+    width: 100%;
+    height: 100%;
+    border: none;
+    /* 아이프레임 기본보더 없앰! */
+}
+.mlist{
+    position: absolute;
+    bottom: 7%;/* 퍼센트로 변경! */
+    left: 50%;
+    /* 부모는? #cont */
+    transform: translateX(-50%);
+    /* x축 중앙이동 -> 정중앙 */
+
+}
+/* ul 플렉스박스 */
+.mlist ul{
+    display: flex;
+    perspective: 480px;
+    /* 원근설정-적용할 요소의 부모박스에 설정 */
+}
+/* 각 리스트 */
+.mlist ul>li{
+    position: relative;
+    /* 부모자격 */
+    overflow: hidden;
+    margin: 0 min(1vw,9px);
+    /* 양쪽마진만 9px과 1vw중 작은것! */
+    transform: rotateX(40deg);
+    /* x축회전 */
+    transform-origin: bottom;
+    /* 회전축 세로방향 하단으로 변경 */
+
+    /* 트랜지션: 속시이지 */
+    transition: transform .4s ease-out;
+}
+/* li에 마우스 오버시 x축회전 일어남!
++ 클래스 on을 주면 일어남! */
+.mlist ul>li:hover,
+.mlist ul>li.on{
+    transform: rotateX(0deg);
+    z-index: 1;
+    outline: 1px solid rgb(38, 139, 255);
+}
+
+.mlist img{
+    width: min(13vw,350px);
+    /* min(유동사이즈,특정사이즈) 작은쪽선택
+    -> 최대크기 지정의 효과! */
+}
+.movtxt{
+    position: absolute;
+    top: 100%;/* 부모의 높이값 만큼 */
+    /* 부모는? .mlist ul>li*/
+    width: min(13vw,350px);
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.7);
+
+    /* 글자셋팅 */
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: min(1.2vw,14px);
+    line-height: 1.6;
+    text-align: center;
+    color: rgb(181, 255, 255);
+
+    /* 트랜지션: 속시이지 - 지연시간 0.3초 */
+    transition: top .4s ease-out .3s;
+}
+/* 부모li에 마우스 오버시 설명박스 올라오기 */
+.mlist ul>li:hover .movtxt{
+    top: 0;
+}
+.movtxt li:first-child{
+    color: rgb(38, 139, 255);
+    font-size: min(1.3vw,17px);
+    white-space: nowrap;/* 줄바꿈방지 */
+    letter-spacing: -1px;
+    margin-top: 8%;
+}
+/******************* 3. 하단영역 *******************/
+#info{
+    position: relative;
+    /* 부모자격 - .sns */
+    height: 100px;
+}
+/* 3-1.회사정보 */
+#info address{
+    color: #727272;
+    font-style: normal;
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 15px;
+    line-height: 20px;
+
+    /* 안쪽여백 */
+    padding-top: 20px;
+    padding-left: 20px;
+}
+#info img{
+    float: left;
+    /* 이미지 자신은 왼쪽, 글자는 오른쪽에 흐르게함 */
+    margin-right: 20px;
+}
+
+ul.sns{
+    position: absolute;
+    top: 35px;
+    right: 20px;
+    /* 부모는? #info */
+
+    display: flex;
+    /* 플렉스박스 */
+
+}
+.sns li{
+    width: 45px;
+    height: 45px;
+    background: url(../FF14_2/icon_sns.png) no-repeat;
+    /* outline: 1px solid lime; */
+    margin: 0 2px;
+    
+    filter: grayscale(100%);
+    /* 필터: 흑백처리 */
+}
+/* 오버시 칼라 */
+.sns li:hover{
+    filter: grayscale(0%);
+}
+/* 배경위치 */
+/* 트위터 */
+.sns li:nth-child(2){
+    background-position: 0 -94px;
+}
+/* 인스타그램 */
+.sns li:last-child{
+    background-position: 0 -47px;
+}
+/* sns a링크 확장 */
+.sns a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}

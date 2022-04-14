@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스타벅스 연습</title>
+    <style>
+        body{
+            background: #000 url(./starbucks_img/reserve_bg.jpg) no-repeat top/100%;
+        }
+        /* 기본 박스 크기 */
+        #trans10 {
+            width: 334px;
+            height: 334px;
+            margin: 100px auto;
+
+        }
+        #trans10 img:last-child{
+                transform: rotateY(0deg);
+                transition: transform .4s ease-out .4s;
+                   /* ease-out 처음엔 빠르고 나중엔 천천히 */
+            }
+            #trans10 img{
+                position: absolute;
+                width: 334px;
+                /* 위치값(top같은거)을 주지 않으면 싸고 있는 박스에 그대로 위치함 >> 젠틀앱솔루트~ */
+            }
+               /* 2. 보거미 오버상태 */
+            /* Y축 90도회전 - 회전후 안보임*/
+            #trans10:hover img:last-child{
+                transform: rotateY(90deg);
+                transition: transform .4s ease-in;
+                   /* ease-in 처음엔 천천히 나중엔 빠르게 */
+            }
+
+               /* 3. 유정이 처음상태(돌아옴) */
+               /* 처음에 이미 Y축 90도 회전상태 - 안보임 */
+            #trans10 img:first-child{
+                transform: rotateY(90deg);
+                transition: transform .4 ease-in;
+                   /* ease-in 처음엔 천천히 나중엔 빠르게 */
+            }
+            
+               /* 4. 유정이 오버상태 */
+                /* Y축 0도로 회전 
+               - 보거미 0.4초 돌동안 기다렸가 0.4초돌기 */
+            #trans10:hover img:first-child{
+                transform: rotateY(0deg);
+                transition: transform .4s ease-out .4s; 
+                   /* ease-out 처음엔 빠르고 나중엔 천천히 */
+            }
+    </style>
+</head>
+
+<body>
+    <div id="trans10">
+        <img src="starbucks_img/reserve_medal02.png" alt="매장 안내">
+        <img src="starbucks_img/reserve_medal01.png" alt="스벅 별">
+    </div>
+
+</body>
+
+</html>
