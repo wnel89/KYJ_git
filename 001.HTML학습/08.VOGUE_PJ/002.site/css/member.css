@@ -102,7 +102,7 @@ select:focus {
 #meminfo input[type=password] {
     width: 340px;
     height: 36px;
-    font-size: 20px;
+    font-size: 16px;
     /* 18px */
     border: 1px solid #737373;
     border-radius: 5px;
