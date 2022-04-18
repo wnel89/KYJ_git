@@ -92,17 +92,19 @@ $(() => { //////////// jQB /////////////////////////
                 } /////// if : 아이디 검사 불통과 //////
                 /////// 검사결과가 통과이면 ////////////
                 else {
-                    // 원래 아이디 중복여부 검사를 해야함!!
-
+                    // 원래 아이디 중복여부 검사를 해야함!!!
                     /************************************* 
                         [ Ajax로 중복아이디 검사하기! ]
                         ajax 처리유형 2가지
                         ______________________________
+
                         1) post 방식 처리 메서드
                         - $.post(URL,data,callback)
+
                         2) get 방식 처리 메서드
                         - $.get(URL,callback)
                         - URL에 데이터가 포함됨
+
                         3) 위의 2가지 유형 중 선택처리 메서드
                         - $.ajax({
                             1. 전송할페이지,
@@ -115,56 +117,58 @@ $(() => { //////////// jQB /////////////////////////
                         })
                     *************************************/
 
-                        $.ajax({
-                            // 1. 전송할페이지
-                            url: "process/chkID.php",
-    
-                            // 2. 전송방식
-                            type: "post",
-    
-                            // 3. 보낼데이터
-                            data: {
-                                "mid": $("#mid").val()
-                            },
-    
-                            // 4. 전송할데이터타입
-                            dataType: "html",
-    
-                            // 5. 비동기옵션
-                            // 비동기 옵션을 꺼야(false)
-                            // 전역변수 pass에 값을 업데이트 가능!
-                            async: false,
-    
-                            // 6. 성공처리: 중복안함 ok,중복은 no
-                            success: function(res){
-                                console.log("결과:",res);
-                                if(res==="ok"){ // 사용가능
-                                    $("#mid").siblings(".msg")
-                                    .text("훌륭한 아이디네요~!")
-                                    .addClass("on");
-                                // 클래스on넣으면 녹색글자
-                                } ///////// if ////////
-                                else { // 사용불가!
-                                    $("#mid").siblings(".msg")
-                                    .text("사용중인 ID입니다!")
-                                    .removeClass("on");
-    
-                                    // 불통과!!!
-                                    pass = false;
-                                    
-                                } //////// else ////////
-    
-                            }, ///// success ////////
-    
-                            // 7. 실패처리
-                            // xhr - XMLHttpRequest 객체
-                            // status - 실패상태코드번호
-                            // error - 에러결과 메시지
-                            error: function(xhr,status,error){
-                                alert("연결실행실패:",error);
-                            } ////// error //////
-    
-                        }); /////////// ajax //////////////////
+                    $.ajax({
+                        // 1. 전송할페이지
+                        url: "process/chkID.php",
+
+                        // 2. 전송방식
+                        type: "post",
+
+                        // 3. 보낼데이터
+                        data: {
+                            "mid": $("#mid").val()
+                        },
+
+                        // 4. 전송할데이터타입
+                        dataType: "html",
+
+                        // 5. 비동기옵션
+                        // 비동기 옵션을 꺼야(false)
+                        // 전역변수 pass에 값을 업데이트 가능!
+                        async: false,
+
+                        // 6. 성공처리: 중복안함 ok,중복은 no
+                        success: function(res){
+                            console.log("결과:",res);
+                            if(res==="ok"){ // 사용가능
+                                $("#mid").siblings(".msg")
+                                .text("훌륭한 아이디네요~!")
+                                .addClass("on");
+                            // 클래스on넣으면 녹색글자
+                            } ///////// if ////////
+                            else { // 사용불가!
+                                $("#mid").siblings(".msg")
+                                .text("사용중인 ID입니다!")
+                                .removeClass("on");
+
+                                // 불통과!!!
+                                pass = false;
+                                
+                            } //////// else ////////
+
+                        }, ///// success ////////
+
+                        // 7. 실패처리
+                        // xhr - XMLHttpRequest 객체
+                        // status - 실패상태코드번호
+                        // error - 에러결과 메시지
+                        error: function(xhr,status,error){
+                            alert("연결실행실패:",error);
+                        } ////// error //////
+
+                    }); /////////// ajax //////////////////
+
+
 
                 } /////// else : 아이디 검사 통과 ////////
 
@@ -433,47 +437,51 @@ $(() => { //////////// jQB /////////////////////////
                 [ Ajax를 이용한 POST방식으로 DB에
                 데이터 입력하기!!! ]
                 __________________________________
+
                 AJAX = Asynchronous Javascript and XML
+
                 - 비동기통신이란? 쉽게 말해서 페이지가
                 새로고쳐지지 않고 그대로 있으면서 일부만
                 서버 통신을 하는 것을 말한다!
+
                 - 제이쿼리는 POST방식으로 ajax를 할 수 있다!
+
                 [ POST 방식 Ajax 메서드 ]
                 $.post(URL,data,callback)
                 $.post(전송할페이지,전송할데이터,전송후실행함수)
+
             ****************************************/
 
             $.post(
-                // 1. 전송할 페이지
+                // 1. 전송할페이지
                 "process/ins.php",
-                // 2. 전송할 데이터
+                // 2. 전송할데이터
                 {
                     // 1.아이디
-                    "mid":$("#mid").val(),
+                    "mid": $("#mid").val(),
                     // 2.비번
-                    "mpw":$("#mpw").val(),
+                    "mpw": $("#mpw").val(),
                     // 3.이름
-                    "mnm":$("#mnm").val(),
-                    // 4.성별
-                    "gen":$(":radio[name=gen]:checked").val(),
+                    "mnm": $("#mnm").val(),
+                    // 4.성별(라디오버튼)
+                    "gen": $(":radio[name=gen]:checked").val(),
                     // 5-1.이메일 앞주소
-                    "email1":$("#email1").val(),
+                    "email1": $("#email1").val(),
                     // 5-2.이메일 뒷주소
-                    "seleml":$("#seleml").val(),
+                    "seleml": $("#seleml").val(),
                     // 5-3.직접입력 이메일 뒷주소
-                    "email2":$("#email2").val()
+                    "email2": $("#email2").val()
                 },
-                // 3. 전송 후 실행함수
+                // 3. 전송후실행함수
                 function (res) {
                     console.log("실행결과:", res);
 
-                    if(res==="ok"){
-                        
+                    if (res === "ok") { /// 성공시 ////
                         // 메시지 띄우기
                         alert("회원가입을 축하드립니다! 짝짝짝!");
                         // 원래는 post방식으로 DB에 회원정보를 입력후
                         // DB에 입력완료시 위의 메시지를 띄워준다!
-            
+
                         // 로그인 페이지로 이동!
                         location.replace("login.php");
                         // location.href = "login.php";
@@ -483,13 +491,13 @@ $(() => { //////////// jQB /////////////////////////
                             페이지 캐쉬를 삭제하도록하여
                             좀 더 안전한 보안을 유지한다!
                         */
-                    } ///////// 성공
-                    else{
-                        alert("웹마스터에게 문의바랍니다.", res);
-                    } ////////// 실패
+                    } ///////// if : 성공시 ///////
+                    else { ////// 실패시 //////////
+                        alert("웹마스터에게 문의바랍니다!", res);
+                    } //////// else : 실패시 ///////
 
-                }
-            ); ////////////////// post 방식 끝
+                }); /////////////// post ////////////////
+
 
 
         } ///////// if : 통과시 ////////////////
