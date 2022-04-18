@@ -14,11 +14,11 @@
     <!-- 미디어쿼리는 본css아래에 넣음! -->
     <link rel="stylesheet" href="css/media.css">
     <script src="js/smoothScroll20.js"></script>
-
+    
     <!-- 제이쿼리 라이브러리 + 제이쿼리UI -->
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
-
+    
     <script src="js/linksys.js"></script>
     <script src="js/swiper-bundle.min.js"></script>
     <script src="js/gallery.js"></script>
@@ -26,15 +26,15 @@
 </head>
 
 <body>
-    <!-- 로그인 세션 처리 인클루드 -->
+    <!-- 로그인 세션처리 인클루드 -->
     <?php include "inc/login_session.inc" ?>
-    
+
     <!-- 1. 상단영역 인클루드 -->
     <?php include "inc/top.inc" ?>
 
     <!-- 2. 메인영역 -->
     <div class="bgc">
-        <main class="cont ibx">
+        <main class="cont ibx disel">
             <!-- 1. 로그인 페이지 탑영역 -->
             <header class="ctop">
                 <!-- 1-1.서브타이틀 -->
@@ -46,15 +46,15 @@
                 <!-- Swiper -->
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="images/people/cont2-1a.jpg" alt="보그 갤러리 이미지"></div>
-                        <div class="swiper-slide"><img src="images/fashion/cont1-2b.jpg" alt="보그 갤러리 이미지"></div>
-                        <div class="swiper-slide"><img src="images/people/cont2-3a.jpg" alt="보그 갤러리 이미지"></div>
-                        <div class="swiper-slide"><img src="images/fashion/cont2-1b.jpg" alt="보그 갤러리 이미지"></div>
-                        <div class="swiper-slide"><img src="images/fashion/cont2-2b.jpg" alt="보그 갤러리 이미지"></div>
-                        <div class="swiper-slide"><img src="images/fashion/cont2-3b.jpg" alt="보그 갤러리 이미지"></div>
-                        <div class="swiper-slide"><img src="images/beauty/cont1-2a.jpg" alt="보그 갤러리 이미지"></div>
-                        <div class="swiper-slide"><img src="images/beauty/cont2-3b.jpg" alt="보그 갤러리 이미지"></div>
-                        <div class="swiper-slide"><img src="images/beauty/cont1-1b.jpg" alt="보그 갤러리 이미지"></div>
+                        <div class="swiper-slide"><img src="images/people/cont2-1a.jpg" alt="보그갤러리이미지"></div>
+                        <div class="swiper-slide"><img src="images/fashion/cont1-2b.jpg" alt="보그갤러리이미지"></div>
+                        <div class="swiper-slide"><img src="images/people/cont2-3a.jpg" alt="보그갤러리이미지"></div>
+                        <div class="swiper-slide"><img src="images/fashion/cont2-1b.jpg" alt="보그갤러리이미지"></div>
+                        <div class="swiper-slide"><img src="images/fashion/cont2-2b.jpg" alt="보그갤러리이미지"></div>
+                        <div class="swiper-slide"><img src="images/fashion/cont2-3b.jpg" alt="보그갤러리이미지"></div>
+                        <div class="swiper-slide"><img src="images/beauty/cont1-2a.jpg" alt="보그갤러리이미지"></div>
+                        <div class="swiper-slide"><img src="images/beauty/cont2-3b.jpg" alt="보그갤러리이미지"></div>
+                        <div class="swiper-slide"><img src="images/beauty/cont1-1b.jpg" alt="보그갤러리이미지"></div>
                     </div>
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>

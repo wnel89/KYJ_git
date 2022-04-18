@@ -8,6 +8,10 @@ font-family: 'Nanum Myeongjo', serif;
 font-family: 'Noto Sans KR', sans-serif;
 */
 
+body{
+    height: 100%;
+}
+
 /* 감싸는 박스 */
 .big_box {
     position: relative;
@@ -15,11 +19,23 @@ font-family: 'Noto Sans KR', sans-serif;
     background-color: #fff;
     /* border-bottom: 1px solid #ccc; */
 }
+.main {
+    height: 1500px;
+}
+.footer {
+    background-color: #fff;
+    border-top: 1px solid #999;
+}
 
 /* 안쪽 박스 */
 .inbox {
     max-width: 1200px;
     margin: 0 auto;
+}
+
+.bgi{
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 

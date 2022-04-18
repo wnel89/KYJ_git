@@ -59,7 +59,7 @@ font-family: 'Roboto Condensed', sans-serif;
     /* 
         비율계산-> 가로크기:세로크기=100:x
         x = 세로크기 * 100 / 가로크기
-        650 * 100 / 1300 = 55.69
+        650 * 100 / 1300 = 50
     */
 }
 /* 비율유지속박스 */
@@ -190,3 +190,11 @@ font-family: 'Roboto Condensed', sans-serif;
     opacity: 1;
 }
 
+
+/* 드래그 선택 안되게 하는 CSS */
+.disel{
+    /* 선택안되게함 */
+    user-select: none;
+    /* 드래그안되게함 */
+    -webkit-user-drag: none;
+}
