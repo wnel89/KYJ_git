@@ -121,3 +121,34 @@ window.addEventListener("load", ()=> {
     };
 
 })
+
+/////// 로딩구역 ///////////////////////////
+window.addEventListener("load",() => {
+
+    console.log("로딩완료!");
+
+    // 포스터 메뉴 li 클릭시 li에 클래스 on넣기
+    // 대상: .bg1 ul>li
+    let bg1 = document.querySelectorAll(".bgi ol>li");
+
+    console.log("리스트개수:",bg1.length);
+
+    // 클래스 초기화 함수 ///
+    const resetFn = ()=>{
+        for(let x of bg1) 
+            x.classList.remove("on");
+    }; ////// resetFn함수 //////////
+
+    // 대상만큼 click이벤트 설정하기
+    // for of 사용!
+    for(let x of bg1){
+        x.onclick = ()=>{
+            // 1. 클래스 초기화함수 호출
+            resetFn();
+            // 2. 해당li요소 클래스 on넣기
+            x.classList.add("on");
+        }; ///////// click /////////
+    } ///////// for of ////////////////
+
+
+}); /////////// 로딩구역 /////////////////////

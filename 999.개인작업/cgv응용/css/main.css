@@ -180,7 +180,7 @@ background-color: #F2EBD8;
 .movtxt{
     position: absolute;
     top: 100%;/* 부모의 높이값 만큼 */
-    /* 부모는? .mlist ul>li*/
+    /* 부모는? .mlist ul>li */
     width: min(13vw,350px);
     height: 100%;
 
