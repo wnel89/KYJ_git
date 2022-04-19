@@ -20,7 +20,11 @@ body{
     /* border-bottom: 1px solid #ccc; */
 }
 .main {
-    height: 1500px;
+    height: 100%;
+}
+.hid{
+    height: 187px;
+    overflow: hidden;
 }
 .footer {
     background-color: #fff;
@@ -36,6 +40,17 @@ body{
 .bgi{
     background-repeat: no-repeat;
     background-size: cover;
+    transition: all .5s ease;
+}
+.bgi:hover{
+    transform: scale(1.05);
+}
+.contIn>h2{
+    font-size: 2.2rem;
+    color: #fff;
+    font-family: 'Nanum Myeongjo', serif;
+    text-align: center;
+    padding: min(15px,3vw);
 }
 
 

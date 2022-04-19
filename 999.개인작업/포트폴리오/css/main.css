@@ -574,12 +574,23 @@
 .cont1{
     display: flex;
     max-width: 1160px;
-    height: 217px;
+    height: 380px;
+    align-content: flex-start;
+}
+.cont1-1{
+    display: flex;
+    max-width: 1160px;
+    height: 380px;
+    align-content: flex-start;
+    margin: 0 0 25px 0;
 }
 .contIn{
     flex: 1;
     border: 1px solid #c9c9c9 ;
+    flex-wrap: wrap;
 }
+
+
 
 
 /* *********** 하단 영역 ************ */
