@@ -6,7 +6,7 @@ window.addEventListener("load", ()=> {
 
     let abtn = document.querySelectorAll(".abtn");
     let slide = document.querySelector("#slide");
-    let bn_txt = document.querySelector(".bn_txt");
+    let bntxt = document.querySelectorAll(".bn_txt");
 
     // 슬라이드 li에 순번 속성 주기
     (() => {
@@ -14,13 +14,12 @@ window.addEventListener("load", ()=> {
         for (let i = 0; i < tg.length; i++){
             tg[i].setAttribute("data-seq", i);
         }
-
-        let tg2 = slide.querySelectorAll(".bn_txt");
-        for (let j = 0; j <tg2.length; j++){
-            tg2[j].setAttribute("data-seq", j);
-        }
+        let tg2 = document.querySelectorAll(".bn_txt");
+        for (let j = 0; j < tg2.length; j++){
+            tg2[j].setAttribute("data-seq2", j);
+        } // bn_txt에도 순번을 지정함
     })
-
+    
     // 광클금지 상태값
     let prot = 0
 
@@ -37,20 +36,16 @@ window.addEventListener("load", ()=> {
         // 0.6초후 잠금해제! //////
 
         if (!gb) clearAuto(); // 인터발 함수 지우기
+        
         // 슬라이드 li요소들 변수할당!
         let sli = slide.querySelectorAll("li");
-        let bnt = slide.querySelectorAll(".bn_txt");
-
+        
         if (dir) { // dir===1 이면 true
 
             // (1) 슬라이드박스의 left값을 -100%로 이동
             slide.style.left = "-100%";
             slide.style.transition = ".6s ease-out";
-            
-            bn_txt.style.left = "-100%";
-            bn_txt.style.transition = ".6s ease-out";
-
-
+        
             // 슬라이드 이동 후 (2),(3) 실행함!
             // 일정시간 후 한번실행하는 타이밍함수는? setTimeout
             setTimeout(() => {
@@ -58,17 +53,12 @@ window.addEventListener("load", ()=> {
                 slide.appendChild(sli[0]);
                 // appendChild(요소) - 선택요소 맨뒤이동
 
-                
                 // (3) 동시에 left값을 0으로 변경함!
                 slide.style.left = "0";
                 slide.style.transition = "none";
                 // 트랜지션 없어야 애니메이션 안보임!
-                
-                bn_txt.appendChild(bnt[0]);
-                bn_txt.style.left = "0";
-                bn_txt.style.transition = "none";
-
             }, 800);
+
         }
         else {
             // li요소 대상
@@ -81,9 +71,6 @@ window.addEventListener("load", ()=> {
             slide.style.left = "-100%";
             slide.style.transition = "none";
 
-            bn_txt.insertBefore(bnt[bnt.length - 1], bnt[0]);
-            bn_txt.style.left = "-100%";
-            bn_txt.style.transition = "none";
 
             // (3) 이후 left값을 0으로 변경하며 애니메이션함
             // 주의: 위의 설정코드와 분리를 위해 setTimeout으로
@@ -91,12 +78,12 @@ window.addEventListener("load", ()=> {
             setTimeout(() => {
                 slide.style.left = "0";
                 slide.style.transition = ".6s ease-out";
-                bn_txt.style.left = "0";
-                bn_txt.style.transition = ".6s ease-out";
+
             }, 10); /// 0.01초 시차! ////
 
         }
     }; ////////////// goSlide함수 ///////////////
+
 
     // 오른쪽버튼 클릭시
     abtn[1].onclick = () => goSlide(1);
@@ -117,7 +104,7 @@ window.addEventListener("load", ()=> {
     }; /////// autoCall함수 ///////////
 
     // 인터발 호출함수 최초호출!
-    autoCall();
+    // autoCall();
 
     // 타임아웃용 변수
     let autoT;
@@ -144,6 +131,7 @@ window.addEventListener("load", ()=> {
 
 })
 
+// ********************************* 메인구역 맵에 설명글 추가 기능
 /////// 로딩구역 ///////////////////////////
 window.addEventListener("load",() => {
 
