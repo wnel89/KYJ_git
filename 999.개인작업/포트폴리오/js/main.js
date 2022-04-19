@@ -6,12 +6,18 @@ window.addEventListener("load", ()=> {
 
     let abtn = document.querySelectorAll(".abtn");
     let slide = document.querySelector("#slide");
+    let bn_txt = document.querySelector(".bn_txt");
 
     // 슬라이드 li에 순번 속성 주기
     (() => {
         let tg = slide.querySelectorAll("li");
         for (let i = 0; i < tg.length; i++){
             tg[i].setAttribute("data-seq", i);
+        }
+
+        let tg2 = slide.querySelectorAll(".bn_txt");
+        for (let j = 0; j <tg2.length; j++){
+            tg2[j].setAttribute("data-seq", j);
         }
     })
 
@@ -33,12 +39,17 @@ window.addEventListener("load", ()=> {
         if (!gb) clearAuto(); // 인터발 함수 지우기
         // 슬라이드 li요소들 변수할당!
         let sli = slide.querySelectorAll("li");
+        let bnt = slide.querySelectorAll(".bn_txt");
 
         if (dir) { // dir===1 이면 true
 
             // (1) 슬라이드박스의 left값을 -100%로 이동
             slide.style.left = "-100%";
             slide.style.transition = ".6s ease-out";
+            
+            bn_txt.style.left = "-100%";
+            bn_txt.style.transition = ".6s ease-out";
+
 
             // 슬라이드 이동 후 (2),(3) 실행함!
             // 일정시간 후 한번실행하는 타이밍함수는? setTimeout
@@ -47,10 +58,15 @@ window.addEventListener("load", ()=> {
                 slide.appendChild(sli[0]);
                 // appendChild(요소) - 선택요소 맨뒤이동
 
+                
                 // (3) 동시에 left값을 0으로 변경함!
                 slide.style.left = "0";
                 slide.style.transition = "none";
                 // 트랜지션 없어야 애니메이션 안보임!
+                
+                bn_txt.appendChild(bnt[0]);
+                bn_txt.style.left = "0";
+                bn_txt.style.transition = "none";
 
             }, 800);
         }
@@ -65,12 +81,18 @@ window.addEventListener("load", ()=> {
             slide.style.left = "-100%";
             slide.style.transition = "none";
 
+            bn_txt.insertBefore(bnt[bnt.length - 1], bnt[0]);
+            bn_txt.style.left = "-100%";
+            bn_txt.style.transition = "none";
+
             // (3) 이후 left값을 0으로 변경하며 애니메이션함
             // 주의: 위의 설정코드와 분리를 위해 setTimeout으로
             // 약간의 시차를 줌!
             setTimeout(() => {
                 slide.style.left = "0";
                 slide.style.transition = ".6s ease-out";
+                bn_txt.style.left = "0";
+                bn_txt.style.transition = ".6s ease-out";
             }, 10); /// 0.01초 시차! ////
 
         }

@@ -53,6 +53,7 @@
 .gnb_box {
     position: absolute;
     background-color: #000;
+    left: 0%;
     width: 100%;
     z-index: 2;
 }
@@ -188,6 +189,12 @@
     object-fit: cover;
     /* 이미지 비율유지 채우기! */
 }
+#slide li .bn_txt{
+    position: absolute;
+    top: 140px;
+    left: 250px;
+    margin: 0 15px;
+}
 
 /*이동버튼*/
 .abtn {
@@ -238,7 +245,7 @@
     }
 }
 
-#slide li .bn_txt {
+/* #slide li .bn_txt {
     position: absolute;
     top: 140px;
     left: 250px;
@@ -246,7 +253,7 @@
     transform: translate(0%, 100%);
     opacity: 0;
     animation: bn1Ani 1s ease-in-out 1s forwards;
-}
+} */
 
 .big1 {
     font: 4rem 'Nanum Myeongjo', serif;
@@ -325,13 +332,14 @@
     height: 152px;
     line-height: 30px;
 }
-
-.news2>ul>a>li.n2_li {
+.news2>ol>li.n2_li>a {
     font-family: 'Noto Sans KR', sans-serif;
     color: #000;
+}
+.news2>ol>li.n2_li>a>div{
+    text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 /* ********************************************************** 새소식란 끝 */
@@ -577,7 +585,7 @@
 /* *********************************** 중간영역 sns 끝 */
 .cont1txt {
     display: inline-block;
-    font-size: 2.5rem;
+    font-size: 2.1rem;
     margin-bottom: 8px;
 }
 
@@ -638,7 +646,7 @@
 .sub_ft {
     position: relative;
     /* 부모자격 */
-    height: 140px;
+    height: 200px;
     padding: 10px;
     box-sizing: border-box;
 }
