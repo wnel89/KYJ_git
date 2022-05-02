@@ -1,0 +1,26 @@
+@charset "utf-8";
+/* 포폴 미디어쿼리 */
+
+/******** 1400px 이하 미디어쿼리 ********/
+@media screen and (max-width:1400px){
+    .gnb_box {
+        width: 100%;
+    }
+}
+/******** 1200px 이하 미디어쿼리 ********/
+@media screen and (max-width:1200px){
+    .mid_sns{
+        display: none;
+    }
+    .mid_line{
+        width: 90%;
+        margin: 20px 58px;
+    }
+    .cont1txt{
+        margin: 10px 58px;
+    }
+    .cont1,
+    .cont1-1{
+        margin: 0 58px;
+    }
+}

@@ -245,16 +245,6 @@
     }
 }
 
-/* #slide li .bn_txt {
-    position: absolute;
-    top: 140px;
-    left: 250px;
-    margin: 0 15px;
-    transform: translate(0%, 100%);
-    opacity: 0;
-    animation: bn1Ani 1s ease-in-out 1s forwards;
-} */
-
 .big1 {
     font: 4rem 'Nanum Myeongjo', serif;
     color: #fff;
