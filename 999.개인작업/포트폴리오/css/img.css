@@ -1,5 +1,22 @@
 @charset "utf-8";
 
+/* 상단영역 GameStart 버튼 이미지 */
+.gnb li.game_btn {
+    background-image: url(../FF14/btn_gamestart.png);
+}
+/* 메인영역 SNS 이미지 */
+.mid_sns>ul>li>a.instar,
+.mid_sns>ul>li>a.faceb,
+.mid_sns>ul>li>a.youtb,
+.mid_sns>ul>li>a.twitter,
+.mid_sns>ul>li>a.naverp{
+    display: block;
+    width: 46px;
+    height: 46px;
+    background-repeat: no-repeat;
+    background-image: url(../FF14/icon_sns.png);
+}
+/* 메인영역 신규맵 이미지 */
 .bg1{
     background-image: url(../FF14/background1.jpg);
 }

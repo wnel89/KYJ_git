@@ -72,8 +72,9 @@ window.addEventListener("DOMContentLoaded", () => {
         참고) 가로스크롤일 경우
             scrollY -> scrollX
             scrollTop -> scrollLeft
-            로 바꿔서 위와 동일함!
+            로 chg서 위와 동일함!
 
     **************************************************/
 
 }); //////////// 로드구역 ////////////////////////
+

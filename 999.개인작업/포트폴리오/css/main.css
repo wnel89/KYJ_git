@@ -18,7 +18,7 @@
 .login_box {
     position: absolute;
     top: 18px;
-    left: 50%;
+    left: 51.6%;
     transform: translateX(-50%);
     width: 1200px;
     max-width: 100%;
@@ -65,7 +65,7 @@
 
 .gnb>ul>li {
     float: left;
-    padding: 15px 30px;
+    padding: 15px 36px;
 }
 
 .gnb>ul>li>a {
@@ -137,7 +137,6 @@
     display: block;
     width: 160px;
     height: 40px;
-    background-image: url(../FF14/btn_gamestart.png);
     background-repeat: no-repeat;
     margin: 0 1px;
 }
@@ -149,8 +148,33 @@
 .gameb {
     display: none;
 }
-
 /* ***************************** gnb 끝 */
+
+/* ***************************** 햄버거 버튼 시작 */
+.ham{
+    position: absolute;
+    top: -48px;
+    right: 20px;
+
+    font-size: 40px;
+    transform: scaleX(1.5);
+
+    /* 버튼 기본없애기 */
+    background-color: transparent;
+    border: none;
+
+    /* 모바일 아닐때 안보임 */
+    display: none;
+}
+.ham::before{
+    content: '≡';
+}
+.ham:focus{
+    outline: none;
+}
+
+/* ***************************** 햄버거 버튼 끝 */
+
 
 /* ***************************** 배너 시작 */
 .container {
@@ -496,50 +520,25 @@
 }
 
 .mid_sns>ul>li>a.instar {
-    display: block;
-    width: 46px;
-    height: 46px;
-    background-image: url(../FF14/icon_sns.png);
-    background-repeat: no-repeat;
     margin: 0 1px 10px;
 }
 
 .mid_sns>ul>li>a.faceb {
-    display: block;
-    width: 46px;
-    height: 46px;
-    background-image: url(../FF14/icon_sns.png);
-    background-repeat: no-repeat;
     margin: 10px 1px;
     background-position: 0 -46px;
 }
 
 .mid_sns>ul>li>a.youtb {
-    display: block;
-    width: 46px;
-    height: 46px;
-    background-image: url(../FF14/icon_sns.png);
-    background-repeat: no-repeat;
     margin: 10px 1px;
     background-position: 0 -92px;
 }
 
 .mid_sns>ul>li>a.twitter {
-    display: block;
-    width: 46px;
-    height: 46px;
-    background-image: url(../FF14/icon_sns.png);
-    background-repeat: no-repeat;
     margin: 10px 1px;
     background-position: 0 -138px;
 }
 
 .mid_sns>ul>li>a.naverp {
-    display: block;
-    width: 46px;
-    height: 46px;
-    background-image: url(../FF14/icon_sns.png);
-    background-repeat: no-repeat;
     margin: 10px 1px;
     background-position: 0 -184px;
 }

@@ -1,5 +1,4 @@
 @charset "utf-8";
-/* 포폴 미디어쿼리 */
 
 /******** 1400px 이하 미디어쿼리 ********/
 @media screen and (max-width:1400px){
@@ -9,13 +8,89 @@
 }
 /******** 1200px 이하 미디어쿼리 ********/
 @media screen and (max-width:1200px){
-    .mid_sns{
+    .gnb,
+    .gnb ul li.game_btn,
+    .sub_menu,
+    .gnb>ul>li.sub_bg::after,
+    .mid_sns,
+    .login_box{
         display: none;
     }
+    .ham {
+        display: block;
+    }
+    .gnb {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+    .gnb>ul{
+        margin-top: 10vh;
+    }
+    .gnb>ul>li{
+        float: none;
+        text-align: center;
+    }
+    .gnb>ul>li>a{
+        font-size: 4vh;
+        line-height: 8vh;
+        color: #fff;
+    }
+    .gnb>ul>li>a,
+    .gnb>ul>li:hover>a{
+        border-bottom: none;
+    }
+    /* .top에 클래스 on을 주면 하위요소 변경 */
+    .gnb_box.on .gnb{
+        display: block;
+    }
+    /* 상단영역 .gnb_box에 클래스 on적용시 버튼변경 */
+    .gnb_box.on button.ham::before{
+        content: '×';
+        color: #fff;
+    }
+    /* 상단영역 .gnb_box에 클래스 on적용시 버튼고정 */
+    .gnb_box.on button.ham{
+        position: fixed;
+        top: 10px;
+        transform: scale(1.5);
+    }
+    /* ***** gnb 없애고 모바일용 햄버거 버튼으로 교체 과정 ******** */
+    
     .mid_line{
-        width: 90%;
+        max-width: 90%;
         margin: 20px 58px;
     }
+    .mid_wrap{
+        width: 100%;
+        height: auto;
+    }
+    .shop{
+        border-top: 1px solid #e6e6e6;
+        border-left: 0;
+    }
+    .item_one,
+    .item_two{
+        width: 47%;
+    }
+
+    .log2{
+        text-align: center;
+        padding-bottom: 5%;
+    }
+    .log2>p{
+        margin: 30px 20px;
+    }
+    .log2>button.btn1,
+    .log2>button.btn2{
+        display: inline;
+        margin: 5% 5%;
+    }
+
+
     .cont1txt{
         margin: 10px 58px;
     }
@@ -23,4 +98,13 @@
     .cont1-1{
         margin: 0 58px;
     }
+    .container {
+        top: -70px;
+        overflow: visible;
+    }
+    .abtn{
+        top: 57%;
+        transform: scale(60%);
+    }
+
 }

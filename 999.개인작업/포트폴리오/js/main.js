@@ -162,3 +162,8 @@ window.addEventListener("load",() => {
 
 
 }); /////////// 로딩구역 /////////////////////
+
+function chg() {
+    var hambtn = document.getElementsByClassName("gnb_box").item(0);
+    hambtn.classList.toggle("on");
+}
