@@ -104,7 +104,7 @@ window.addEventListener("load", ()=> {
     }; /////// autoCall함수 ///////////
 
     // 인터발 호출함수 최초호출!
-    // autoCall();
+    autoCall();
 
     // 타임아웃용 변수
     let autoT;
